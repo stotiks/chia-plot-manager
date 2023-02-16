@@ -1,0 +1,50 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+*.bak
+CMakeUserPresets.json
+
+/build
+/.settings
+/.project
+/.cproject
+/.pydevproject
+/config/local
+/PASSWD
+/NETWORK
+/DB_VERSION
+/testnet*
+/tmp
+/.idea
+/_deps
+/*.dat

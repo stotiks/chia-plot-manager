@@ -1,0 +1,58 @@
+{
+    "version": 4,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 11,
+        "patch": 0
+    },
+    "configurePresets": [
+
+        {
+            "name": "windows-base",
+            "hidden": true,
+            "description": "Sets Visual Studio generator, build directory",
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+            }
+        },
+
+        {
+            "name": "windows-release",
+            "displayName": "Windows x64 Release",
+            "description": "Sets Visual Studio generator, build directory",
+            "inherits": "windows-base",
+            "cacheVariables": {
+                "PLOT_MANAGER_VERSION": "$env{PLOT_MANAGER_VERSION}"
+            },
+            "warnings": {
+                "dev": false
+            }
+        },
+
+        {
+            "name": "windows-debug",
+            "displayName": "Windows x64 Debug",
+            "description": "Sets Visual Studio generator, build directory",
+            "inherits": "windows-base",
+            "cacheVariables": {
+                "PLOT_MANAGER_VERSION": "$env{PLOT_MANAGER_VERSION}"
+            }
+        }
+
+    ],
+
+    "buildPresets": [
+        {
+            "name": "windows-release",
+            "configurePreset": "windows-release",
+            "configuration": "Release"
+        },
+        {
+            "name": "windows-debug",
+            "configurePreset": "windows-debug",
+            "configuration": "Debug"
+        }
+    ]
+
+}
