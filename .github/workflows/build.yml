@@ -9,7 +9,11 @@ on:
 
 permissions:
       contents: write
-      
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
+
 env:
   CMAKE_BUILD_PRESET: "windows-release"
   PLOT_MANAGER_VERSION: ${{ github.ref_name }}
