@@ -31,6 +31,7 @@ FetchContent_MakeAvailable(plot_manager)
 add_custom_command(TARGET plot_manager POST_BUILD
         COMMAND ${CMAKE_MAKE_PROGRAM} PlotManager/PlotManager.csproj -restore -m
 			/p:Configuration=Release
+			/p:PlatformTarget=x64
 			/p:OutputPath=${plot_manager_SOURCE_DIR}/bin/Release
 			/p:Version=${PLOT_MANAGER_VERSION_STRING}
 			/p:FileVersion=${PLOT_MANAGER_VERSION_STRING}
