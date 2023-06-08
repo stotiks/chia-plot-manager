@@ -104,8 +104,11 @@ get_cmake_property(CPACK_COMPONENTS_ALL COMPONENTS)
 list(REMOVE_ITEM CPACK_COMPONENTS_ALL "Unspecified")
 
 set(CPACK_NSIS_MENU_LINKS
-${MAIN_EXE} ${CPACK_PACKAGE_NAME}
+	${MAIN_EXE} ${CPACK_PACKAGE_NAME}
+	PlotSincGui.exe "Plot Sinc"
+	ReComputeServerGui.exe "Recompute Server"
 )
+
 set(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL ON)
 
 
@@ -120,4 +123,5 @@ cpack_add_component(plotters
 	REQUIRED)
 
 cpack_add_component(tools
-	DISPLAY_NAME "Tools")
+	DISPLAY_NAME "Tools"
+	REQUIRED)
