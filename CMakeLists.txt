@@ -41,11 +41,22 @@ set(plot_manager_RELEASE_DIR ${plot_manager_SOURCE_DIR}/bin/CPack_PlotManager_Re
 install(DIRECTORY ${plot_manager_RELEASE_DIR}/ DESTINATION ./ COMPONENT gui)
 
 
-set(GIGAHORSE_GIT_TAG "origin/master")
+FetchContent_Declare(
+    mmx_cuda_plotter
+    GIT_REPOSITORY https://github.com/madMAx43v3r/mmx-binaries.git
+    GIT_TAG "origin/testnet11"
+)
+FetchContent_MakeAvailable(mmx_cuda_plotter)
+
+set (MMX_DESTINATION ./mmx/)
+set(MMX_CUDA_PLOTTER_PATH ${mmx_cuda_plotter_SOURCE_DIR}/mmx-cuda-plotter/windows)
+install(DIRECTORY ${MMX_CUDA_PLOTTER_PATH}/ DESTINATION ${MMX_DESTINATION} COMPONENT plotters)
+
+
 FetchContent_Declare(
     chia_gigahorse
     GIT_REPOSITORY https://github.com/madMAx43v3r/chia-gigahorse.git
-    GIT_TAG ${GIGAHORSE_GIT_TAG}
+    GIT_TAG "origin/master"
 )
 FetchContent_MakeAvailable(chia_gigahorse)
 
